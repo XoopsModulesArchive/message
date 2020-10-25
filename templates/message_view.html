@@ -1,0 +1,15 @@
+<h4><{$smarty.const._MD_MESSAGE_TEMPLATE11}></h4>
+<table class="outer">
+<tr><td class="head"><{$smarty.const._MD_MESSAGE_TEMPLATE12}></td><td class="odd"><{$msgdata.fromname}> (<{$msgdata.utime|xoops_formattimestamp:l}>)</td></tr>
+<tr><td class="head"><{$smarty.const._MD_MESSAGE_TEMPLATE3}></td><td class="odd"><{$msgdata.title}></td></tr>
+<tr><td class="head"><{$smarty.const._MD_MESSAGE_TEMPLATE4}></td><td class="odd"><{$msgdata.message}></td></tr>
+<tr><td class="even">
+<input type="button" value="<{$smarty.const._MD_MESSAGE_TEMPLATE13}>" onclick="location.href='index.php?action=new&amp;res=<{$msgdata.inbox_id}>'">
+</td>
+<td class="even" style="text-align:right;">
+<form method="post" action="index.php?action=delete&amp;inout=in">
+<input type="hidden" name="inbox" value="<{$msgdata.inbox_id}>">
+<input type="submit" value="<{$smarty.const._MD_MESSAGE_TEMPLATE14}>">
+</form>
+</td></tr>
+</table>

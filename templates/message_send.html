@@ -1,0 +1,14 @@
+<h4><{$smarty.const._MD_MESSAGE_TEMPLATE7}></h4>
+<a href="index.php?action=new"><{$smarty.const._MD_MESSAGE_TEMPLATE8}></a>
+<table class="outer" style="background-color:#444444;" cellspacing="1">
+<tr>
+<th><{$smarty.const._MD_MESSAGE_TEMPLATE3}></th><th><{$smarty.const._MD_MESSAGE_TEMPLATE9}></th><th><{$smarty.const._MD_MESSAGE_TEMPLATE10}></th>
+</tr>
+<{foreach item=val from=$ListData}>
+<tr>
+<td class="even"><a href="index.php?action=view&amp;inout=out&amp;outbox=<{$val.outbox_id}>"><{$val.title}></a></td>
+<td class="odd"><{$val.fromname}></td>
+<td class="even"><{$val.utime|xoops_formattimestamp:l}></td>
+</tr>
+<{/foreach}>
+</table>

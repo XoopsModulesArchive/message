@@ -1,0 +1,39 @@
+プライベートメッセージモジュールです。
+コア保有のPMと一部バッティングしますので、PMモジュールはアンインストールしてください。
+（どんな影響が出るか試してません。）
+テーブルは別なので、データは各自手動で移してください。
+
+新着メッセージがあるとマイフレンドモジュールの新着ブロックに表示されます。
+
+user_userinfo.htmlのテンプレートは修正したほうが幸せかもしれません。
+
+      <{if $xoops_isuser == true && $pmliteUrl != ''}>
+        <tr valign="top">
+          <td class="head"><{$smarty.const._MD_USER_LANG_PM}></td>
+          <td class="<{cycle values='odd,even'}>">
+            <a href="javascript:openWithSelfMain('<{$pmliteUrl|xoops_escape:link}>', 'pmlite', 480, 400);">
+            <img src="<{$smarty.const.XOOPS_URL}>/images/icons/pm.gif" alt="<{$smarty.const._SENDPMTO|replace:"%s":$thisUser->getShow('uname')}>" title="<{$smarty.const._SENDPMTO|replace:"%s":$thisUser->getShow('uname')}>" /></a>
+          </td>
+        </tr>
+      <{/if}>
+を
+
+      <{if $xoops_isuser == true && $pmliteUrl != ''}>
+        <tr valign="top">
+          <td class="head"><{$smarty.const._MD_USER_LANG_PM}></td>
+          <td class="<{cycle values='odd,even'}>">
+            <a href="<{$pmliteUrl|xoops_escape:link}>">
+            <img src="<{$smarty.const.XOOPS_URL}>/images/icons/pm.gif" alt="<{$smarty.const._SENDPMTO|replace:"%s":$thisUser->getShow('uname')}>" title="<{$smarty.const._SENDPMTO|replace:"%s":$thisUser->getShow('uname')}>" /></a>
+          </td>
+        </tr>
+      <{/if}>
+こんな感じに
+
+
+ToDo:
+あて先の入力方法
+アドレス帳
+同報発信
+テンプレート名の変更
+アクション名の変更
+言語定数の整理
